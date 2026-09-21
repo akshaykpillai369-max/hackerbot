@@ -26,6 +26,8 @@ app.command('/hackerbot-help', async ({ ack, respond }) => {
     • \`/hackerbot-ping\` - Check latency\n
     • \`/hackerbot-catfact\` - Get a random cat fact\n
     • \`/hackerbot-joke\` - Get a random joke\n
+    • \`/hackerbot-vuln\` - Get a live vulnerability update\n
+    • \`/hackerbot-passcheck\` - Rate the strength of the pass\n
     • \`/hackerbot-help\` - Show this help menu`,
   });
 });
@@ -85,6 +87,43 @@ app.command('/hackerbot-vuln', async({ack, respond}) => {
         await respond({text: 'Could not fetch vulnerabiltity data right now.'})
     }
 });
+
+app.command('/hackerbot-passcheck', async({command, ack, respond})=> {
+
+    await ack()
+
+    const pass = command.text.trim()
+
+    if(!pass){
+
+        await respond({
+
+            text: 'Use like this : /hackerbot-passcheck your-password',
+            response_type: 'ephemeral'
+        })
+
+        return
+    }
+
+    let strength = 'Weak'
+    if(pass.length >=12){
+
+        strength = 'Strong'
+    }
+
+    else if (pass.length >=8){
+
+        strength = 'moderate'
+    }
+
+    await respond({
+
+        text : `Password check results \n Length : ${pass.length} \n Strength of the pass: ${strength}`,
+        response_type: 'ephemeral'
+    })
+});
+
+gjhjkhkmnbhbmnbmnvvvhjhjhbnbnbnbvnbvnbvnvgjhgjgjhjhhgjgjgjjghjgjhgjjhgjgjgjljlkjlkjjkjlkjlkjijjkoijoijj
 
 (async () => {
   await app.start();
