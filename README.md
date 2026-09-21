@@ -1,4 +1,4 @@
-# Hacker_Bot
+# HackerBot
 
 A fun live Slack hacker bot with many features useful to hackers.
 
