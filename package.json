@@ -1,5 +1,5 @@
 {
-  "name": "hackerbot",
+  "name": "hackerbot1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,8 +11,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "@slack/bolt": "^5.0.0",
-    "axios": "^1.19.0",
-    "dotenv": "^17.4.2"
+    "@slack/bolt": "^5.1.0",
+    "axios": "^1.20.0",
+    "dotenv": "^18.0.1"
   }
 }
