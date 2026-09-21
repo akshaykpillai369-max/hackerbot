@@ -123,8 +123,6 @@ app.command('/hackerbot-passcheck', async({command, ack, respond})=> {
     })
 });
 
-gjhjkhkmnbhbmnbmnvvvhjhjhbnbnbnbvnbvnbvnvgjhgjgjhjhhgjgjgjjghjgjhgjjhgjgjgjljlkjlkjjkjlkjlkjijjkoijoijj
-
 (async () => {
   await app.start();
   console.log('⚡️ Bolt app is running!');
