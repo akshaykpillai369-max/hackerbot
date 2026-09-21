@@ -21,11 +21,16 @@ app.command('/hackerbot-ping', async ({ ack, respond }) => {
 app.command('/hackerbot-help', async ({ ack, respond }) => {
   await ack();
   await respond({
-    text: `*Available Commands:*\n• \`/hackerbot-ping\` - Check latency\n• \`/hackerbot-catfact\` - Get a random cat fact\n• \`/hackerbot-help\` - Show this help menu`,
+    text: 
+    `*Available Commands:*\n
+    • \`/hackerbot-ping\` - Check latency\n
+    • \`/hackerbot-catfact\` - Get a random cat fact\n
+    • \`/hackerbot-joke\` - Get a random joke\n
+    • \`/hackerbot-help\` - Show this help menu`,
   });
 });
 
-// Cat Fact Command (External API)
+// Cat Fact Command
 app.command('/hackerbot-catfact', async ({ ack, respond }) => {
   await ack();
   try {
@@ -39,6 +44,22 @@ app.command('/hackerbot-catfact', async ({ ack, respond }) => {
     });
   }
 });
+
+// Joke Command
+app.command('/hackerbot-joke', async ({ ack, respond }) => {
+  await ack();
+  try {
+    const response = await axios.get('https://official-joke-api.appspot.com/random_joke');
+    await respond({
+      text: `${response.data.setup}\n\n${response.data.punchline}`,
+    });
+  } catch (err) {
+    await respond({
+      text: 'Failed to fetch a joke.',
+    });
+  }
+});
+
 
 (async () => {
   await app.start();
