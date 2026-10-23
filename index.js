@@ -1,9 +1,6 @@
 require('dotenv').config();
-const http = require('http');
 const { App } = require('@slack/bolt');
 const axios = require('axios')
-
-
 
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
@@ -29,7 +26,7 @@ app.command('/hackerbot-help', async ({ ack, respond }) => {
     • /hackerbot-ping - Check latency\n
     • /hackerbot-catfact - Get a random cat fact\n
     • /hackerbot-joke - Get a random joke\n
-    •/hackerbot-vuln - Get a live vulnerability update\n
+    • /hackerbot-vuln - Get a live vulnerability update\n
     • /hackerbot-passcheck - Rate the strength of the pass\n
     • /hackerbot-help - Show this help menu `
   });
