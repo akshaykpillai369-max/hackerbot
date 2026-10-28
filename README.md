@@ -1,12 +1,11 @@
 # HackerBot
 
-A fun live Slack hacker bot with many features useful to hackers.
-
+A slack hacker bot with many features useful to hackers.
 
 
 ## What is this about?
 
-This is a slack bot built for the hack club slack workspace that let's you run lots of fun tools, api utilities, and simple automation commands directly inside slack. I made this because I love hacking because when we try hard to hack something(ethically), the dopamine hit it gives is indescribable
+This is a slack bot built for the slack that let  you run lots of fun tools, api utilities, and simple automation commands directly inside slack. I made this because I love hacking because when we try hard to hack something(ethically), the dopamine hit it gives is indescribable
 
 ## How does it work?
 
@@ -23,7 +22,7 @@ clone the repository:
 
 git clone (https://github.com/akshaykpillai369-max/hackerbot)
 
-cd https://github.com/akshaykpillai369-max/hackerbot/
+cd hackerbot
 
 npm install
 
